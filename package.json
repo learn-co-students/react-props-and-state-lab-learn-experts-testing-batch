@@ -13,6 +13,7 @@
     "copy-git-hooks": "./bin/copy-hooks",
     "test": "mocha -R mocha-multi --require test/root.js --reporter-options nyan=-,json=.results.json",
     "bundle": "browserify index.js -t babelify --exclude react/addons --exclude react/lib/ExecutionEnvironment --exclude react/lib/ReactContext -o bundle.js",
+    "watch": "watchify index.js -t babelify --exclude react/addons --exclude react/lib/ExecutionEnvironment --exclude react/lib/ReactContext -o bundle.js --verbose",
     "postinstall": "npm run copy-git-hooks"
   },
   "repository": {
@@ -43,10 +44,11 @@
     "mocha-multi": "^0.9.0",
     "node-inspector": "^0.12.8",
     "react-addons-test-utils": "^15.3.0",
-    "sinon": "^1.17.6"
+    "sinon": "^1.17.6",
+    "watchify": "^3.8.0"
   },
   "dependencies": {
-    "fetch-mock" : "^5.5.0",
+    "fetch-mock": "^5.5.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0"
   }
